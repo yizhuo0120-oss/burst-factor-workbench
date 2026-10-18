@@ -16,9 +16,9 @@ export default function Sidebar() {
   const pathname = usePathname();
   return (
     <aside className="dark-scroll fixed top-0 left-0 z-40 flex h-screen w-[264px] flex-col overflow-y-auto bg-night text-cream">
-      {/* brand */}
+      {/* brand → 点击返回封面 */}
       <div className="px-6 pt-7 pb-6">
-        <div className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center gap-2.5 rounded-xl transition-opacity hover:opacity-70" title="返回封面">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold font-display text-lg font-bold text-night">
             爆
           </span>
@@ -26,7 +26,7 @@ export default function Sidebar() {
             <div className="font-display text-[17px] font-semibold tracking-wide">爆款因子工作台</div>
             <div className="text-[11px] tracking-[0.28em] text-muted">美妆版 · BEAUTY</div>
           </div>
-        </div>
+        </Link>
       </div>
 
       <div className="mx-6 h-px bg-night-soft" />
