@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f7f0e2;
+  --color-cream-deep: #f3e8cf;
+  --color-cream-line: #e9dfce;
+  --color-paper: #fffdf8;
+  --color-gold: #b3872c;
+  --color-gold-deep: #8a6a22;
+  --color-gold-soft: #f5ecd6;
+  --color-berry: #9c3d54;
+  --color-berry-soft: #f7e4e8;
+  --color-moss: #2e7d4f;
+  --color-moss-soft: #e2efe6;
+  --color-ink: #1e1812;
+  --color-ink-soft: #4a3f32;
+  --color-muted: #8a7b68;
+  --color-night: #16110c;
+  --color-night-soft: #241c14;
+
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
+}
+
+html {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* thin elegant scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8c9a8;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b3872c;
+}
+
+.dark-scroll::-webkit-scrollbar-thumb {
+  background: #4a3f32;
+}
+.dark-scroll::-webkit-scrollbar-thumb:hover {
+  background: #b3872c;
+}
+
+/* dotted underline for annotated factor tags */
+.factor-tag {
+  border-bottom: 2px dotted var(--color-gold);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.factor-tag:hover {
+  background: var(--color-gold-soft);
+}
+
+/* shimmer for progressive AI reveal */
+@keyframes shimmer {
+  0% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.35;
+  }
+}
+.ai-thinking {
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* soft rise-in for cards */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise-in {
+  animation: rise-in 0.45s ease both;
+}
